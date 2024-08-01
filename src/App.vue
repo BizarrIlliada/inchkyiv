@@ -1,6 +1,7 @@
 <template>
+  <TheAlerts></TheAlerts>
   <!-- <header class="app-header">
-    <HeaderSlider></HeaderSlider>
+    <TheHeaderSlider></TheHeaderSlider>
   </header> -->
   <main class="app-main">
     <RouterView />
@@ -10,7 +11,8 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 
-import HeaderSlider from './components/HeaderSlider.vue';
+import TheAlerts from './components/TheAlerts.vue';
+import TheHeaderSlider from './components/TheHeaderSlider.vue';
 </script>
 
 
@@ -24,4 +26,4 @@ import HeaderSlider from './components/HeaderSlider.vue';
     display: flex;
     flex-grow: 1;
   }
-</style>
+</style>./components/TheHeaderSlider.vue

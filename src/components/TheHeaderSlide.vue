@@ -254,9 +254,14 @@ function nextSlide() {
       cursor: pointer;
       background-color: transparent;
       border: none;
+      z-index: 100;
 
       @include tablet {
         transform: none;
+      }
+
+      @include phone {
+        top: 70%;
       }
     }
   }

@@ -54,7 +54,7 @@
   });
 
   const inputClasses = computed(() => {
-    const mainClass = 'my-input__input'
+    const mainClass = 'my-input__input';
     const classes = [mainClass];
 
     if (props.invalid) {

@@ -1,18 +1,18 @@
 <template>
   <TransitionGroup tag="div" class="slider" name="slider" @leave="leave">
-    <HomeSlide
+    <TheHeaderSlide
       v-for="slide in slides.slice(0, 3)"
       :key="slide.id"
       :id="slide.id"
       :bgc="slide.bgc"
       :slidesLength="slides.length"
       @nextSlide="nextSlide"
-    ></HomeSlide>
+    ></TheHeaderSlide>
   </TransitionGroup>
 </template>
 
 <script lang="ts" setup>
-import HomeSlide from './HeaderSlide.vue';
+import TheHeaderSlide from './TheHeaderSlide.vue';
 
 import { ref } from 'vue';
 
@@ -85,4 +85,4 @@ function leave(el: Element) {
 .slider-leave-to {
   transform: translateX(-100%);
 }
-</style>../../components/HomeSlide.vue./HeaderSlide.vue
+</style>../../components/HomeSlide.vue./HeaderSlide.vue./TheHeaderSlide.vue
