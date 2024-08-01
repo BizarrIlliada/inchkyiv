@@ -1,0 +1,42 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+
+  @include tablet {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  @include phone {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  &__item {
+    @for $start from 1 through 16 {
+      @for $end from $start through 16 {
+        &--desktop-#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+
+    @include tablet {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @include phone {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--phone-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
