@@ -7,6 +7,7 @@
       :class="inputClasses"
       :value="modelValue"
       @input="onInput"
+      v-phone-mask="type === 'phone'"
     >
 
     <div v-if="type === 'password'" class="my-input__eye-container" @click="togglePasswordVisibility">
@@ -29,6 +30,7 @@
 
 <script setup lang="ts">
   import { ref, computed } from 'vue';
+  import { phoneMaskDirective as vPhoneMask } from '@/tools/directives/phoneMask.directive';
 
   defineOptions({
     name: 'MyInput',
@@ -39,7 +41,7 @@
   interface Props {
     id: string,
     modelValue: string,
-    type?: 'text' | 'password' | 'number',
+    type?: 'text' | 'password' | 'number' | 'phone',
     placeholder?: string,
     invalid?: boolean,
     errorMessage?: string,

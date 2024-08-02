@@ -186,6 +186,7 @@
           <MyInput
             id="phone-input"
             class="form__input"
+            type="phone"
             :invalid="!!errors.phone"
             :errorMessage="errors.phone"
             v-model="phone"
@@ -212,6 +213,7 @@ const {
   numbersOnlyRule,
   addressRule,
   numbersAndCyrillicRule,
+  phoneRule,
 } = useValidationRules();
 
 defineRule('required', requiredRule);
@@ -220,6 +222,7 @@ defineRule('email', emailRule);
 defineRule('numbers', numbersOnlyRule);
 defineRule('address', addressRule);
 defineRule('numbersAndCyrillic', numbersAndCyrillicRule);
+defineRule('phone', phoneRule);
 
 const { handleSubmit, errors, resetForm } = useForm();
 
@@ -234,7 +237,7 @@ const { value: country } = useField('country', 'cyrillicOnly');
 const { value: city } = useField('city', 'cyrillicOnly');
 const { value: zip } = useField('zip', 'numbers');
 const { value: address } = useField('address', 'address');
-const { value: phone } = useField('phone', 'required');
+const { value: phone } = useField('phone', 'required|phone');
 
 const onSubmit = handleSubmit((values) => {
   console.log(values);

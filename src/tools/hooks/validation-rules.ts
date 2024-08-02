@@ -47,6 +47,15 @@ export function useValidationRules() {
     return 'Адреса повинна бути коректна';
   }
 
+  function phoneRule(value: string) {
+    if (!value || /^0\d{9}$/.test(value.replace(/\D/g, ''))) {
+      return true;
+    }
+
+    return 'Номер телефону повинен бути коректним';
+    // return true;
+  }
+
   return {
     requiredRule,
     emailRule,
@@ -54,5 +63,6 @@ export function useValidationRules() {
     cyrillicOnlyRule,
     numbersAndCyrillicRule,
     addressRule,
+    phoneRule,
   }
 }
