@@ -1,9 +1,5 @@
 <template>
   <div class="form-page">
-    <h3 class="form-page__title">
-      Form Page
-    </h3>
-
     <form class="form-page__form form" @submit="onSubmit">
       <div class="form__content">
         <h4 class="form__subtitle">
@@ -240,7 +236,7 @@ const { value: address } = useField('address', 'address');
 const { value: phone } = useField('phone', 'required|phone');
 
 const onSubmit = handleSubmit((values) => {
-  console.log(values);
+  console.log('Form values: ', values);
 
   alertsStore.add({ message: 'Форма успішно відправлена!', severity: 'success' });
   resetForm();
@@ -248,16 +244,7 @@ const onSubmit = handleSubmit((values) => {
 </script>
 
 <style scoped lang="scss">
-  .form-page {
-    margin-bottom: 40px;
-
-    &__title {
-      text-align: center;
-      font-size: 40px;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-  }
+  .form-page {}
 
   .form {
     display: flex;

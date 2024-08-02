@@ -48,7 +48,7 @@ function leave(el: Element) {
 
 <style scoped lang="scss">
 .slider {
-  height: 100%;
+  height: 100vh;
   position: relative;
 
   & > * {

@@ -1,8 +1,9 @@
 <template>
   <TheAlerts></TheAlerts>
-  <!-- <header class="app-header">
+  <header class="app-header">
     <TheHeaderSlider></TheHeaderSlider>
-  </header> -->
+    <TheMainNavigation></TheMainNavigation>
+  </header>
 
   <main class="app-main">
     <div class="container">
@@ -16,13 +17,16 @@ import { RouterView } from 'vue-router'
 
 import TheAlerts from './components/TheAlerts.vue';
 import TheHeaderSlider from './components/TheHeaderSlider.vue';
+import TheMainNavigation from './components/TheMainNavigation.vue';
 </script>
 
 
 <style scoped lang="scss">
   .app-header {
-    height: 100vh;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .app-main {

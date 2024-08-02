@@ -1,9 +1,5 @@
 <template>
   <div class="blocks-page">
-    <h3 class="blocks-page__title">
-      Movies Page
-    </h3>
-
     <div class="blocks-page__sorting">
       <div class="blocks-page__radio">
         <input
@@ -98,7 +94,6 @@ const movies = computed(() => {
 onMounted(async () => {
   try {
     moviesFromServer.value = (await loadMovies(1)).results;
-    console.log(movies.value);
   } catch (error) {
     alertsStore.add({ message: 'Щось пішло не так', severity: 'error' });
   }
@@ -107,14 +102,7 @@ onMounted(async () => {
 
 <style scoped lang="scss">
   .blocks-page {
-    margin-bottom: 40px;
-
-    &__title {
-      text-align: center;
-      font-size: 40px;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
+    min-height: 100vh;
 
     &__blocks {
       display: flex;
