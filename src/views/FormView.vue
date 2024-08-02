@@ -1,5 +1,5 @@
 <template>
-  <div class="form-page container">
+  <div class="form-page">
     <h3 class="form-page__title">
       Form Page
     </h3>

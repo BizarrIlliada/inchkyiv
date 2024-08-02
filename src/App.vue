@@ -3,8 +3,11 @@
   <!-- <header class="app-header">
     <TheHeaderSlider></TheHeaderSlider>
   </header> -->
+
   <main class="app-main">
-    <RouterView />
+    <div class="container">
+      <RouterView />
+    </div>
   </main>
 </template>
 
@@ -26,4 +29,4 @@ import TheHeaderSlider from './components/TheHeaderSlider.vue';
     display: flex;
     flex-grow: 1;
   }
-</style>./components/TheHeaderSlider.vue
+</style>
